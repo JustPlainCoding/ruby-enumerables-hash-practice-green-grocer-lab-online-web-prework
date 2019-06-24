@@ -16,7 +16,10 @@ result
 end
 
 def apply_coupons(cart, coupons)
+  puts coupons[0]
 if coupons[0]
+  coupon = coupons[0]
+end
  if cart.has_key?(coupon[:item])
     item = coupon[:item] 
     with_coupon = "#{item} W/COUPON"
