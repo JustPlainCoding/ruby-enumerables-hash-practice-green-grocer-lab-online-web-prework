@@ -49,9 +49,8 @@ cart
 end
 
 def checkout(cart, coupons)
-  puts cart
-  puts coupons
   consolidated_cart = consolidate_cart(cart)
+  puts consolidated_cart
   coupon_cart = apply_coupons(consolidated_cart, coupons)
   clearance_and_coupon = apply_clearance(coupon_cart)
   total = clearance_and_coupon.reduce(0) {|total, (key, value)| total += (value[:price] * value[:count])}
