@@ -33,7 +33,7 @@ def apply_coupons(cart, coupons)
       apply_coupons(cart, coupons)
     end
   elsif cart.has_key?("#{coupon[:item]} W/COUPON")
-    cart("#{coupon[:item} W/COUPON")[:count] += coupon[:num]
+    cart("#{coupon[:item]} W/COUPON")[:count] += coupon[:num]
   end
 end
 cart
