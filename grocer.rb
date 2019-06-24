@@ -26,7 +26,7 @@ def apply_coupons(cart, coupons)
       count: coupon[:num]
     }
     cart["#{item}"][:count] = cart["#{item}"][:count] - coupon[:num]
-    new_coupons = coupons.shift
+    coupons.shift
     if new_coupons.length >= 1
       apply_coupons(cart, new_coupons)
     end
