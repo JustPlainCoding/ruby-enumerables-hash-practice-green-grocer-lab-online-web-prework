@@ -16,11 +16,10 @@ result
 end
 
 def apply_coupons(cart, coupons)
+  binding.pry
   if coupons[0] != " " && coupons[0] != false
     coupon = coupons[0]
-  binding.pry
   if cart.has_key?(coupon[:item])
-    coupon = coupons[0]
     item = coupon[:item] 
     with_coupon = "#{item} W/COUPON"
     cart[with_coupon] = {
