@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
  if cart.has_key?(coupon[:item]) && coupon[:num] ==
     cart[coupon[:item]][:count]
     with_coupon = "#{coupon[:item]} W/COUPON"
-    cart[with_cupon] = cart[coupon[:item]]
+    cart[with_coupon] = cart[coupon[:item]]
  end
 p cart
 end
