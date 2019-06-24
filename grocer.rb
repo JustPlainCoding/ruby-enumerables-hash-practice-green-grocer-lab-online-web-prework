@@ -31,7 +31,7 @@ def apply_coupons(cart, coupons)
     if coupons.length >= 1
       apply_coupons(cart, coupons)
     end
-  elsif cart.has_key?("#{with_coupon}")
+  elsif cart.has_key?("#{with_coupon}") && coupon[:num] >= cart[item][:count]
     cart[with_coupon][:count] += coupon[:num]
     cart["#{item}"][:count] -= coupon[:num]
   end
