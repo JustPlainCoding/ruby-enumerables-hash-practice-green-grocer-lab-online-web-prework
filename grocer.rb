@@ -1,9 +1,22 @@
+require 'pry'
+
 def consolidate_cart(cart)
-  # code here
+  result = {}
+  cart.each do |item|
+    item.each do |(key, value)|
+      if result.include?(key) == false
+        value[:count] = 1
+        result[key] = value
+      else
+        result[key][:count] += 1
+      end
+    end
+  end
+result
 end
 
 def apply_coupons(cart, coupons)
-  # code here
+ 
 end
 
 def apply_clearance(cart)
