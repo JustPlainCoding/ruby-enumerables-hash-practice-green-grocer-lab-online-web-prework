@@ -27,14 +27,14 @@ def apply_coupons(cart, coupons)
       clearance: cart["#{item}"][:clearance],
       count: coupon[:num]
     }
-    cart["#{item}"][:count] = cart["#{item}"][:count] - coupon[:num]
+    cart["#{item}"][:count] -= coupon[:num]
     coupons.shift
     if coupons.length >= 1
       apply_coupons(cart, coupons)
     end
   elsif cart.has_key?("#{coupon[:item]} W/COUPON")
     cart["#{coupon[:item]} W/COUPON"][:count] += coupon[:num]
-    cart["#{item}"][:count] = cart["#{item}"][:count] - coupon[:num]
+    cart["#{item}"][:count] -= coupon[:num]
   end
 end
 cart
