@@ -41,7 +41,6 @@ end
 
 def apply_clearance(cart)
   cart.each do |(key, value)|
-    binding.pry
     if value[:clearance] = true
       value[:price] = (value[:price] * 0.8).round(2)
     end
