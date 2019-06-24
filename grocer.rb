@@ -19,12 +19,14 @@ def apply_coupons(cart, coupons)
  coupon = coupons[0]
  if cart.has_key?(coupon[:item]) && coupon[:num] ==
     cart[coupon[:item]][:count]
+    item = coupon[:item] 
     with_coupon = "#{coupon[:item]} W/COUPON"
     cart[with_coupon] = {
       price: coupon[:cost] / coupon[:num],
       clearance: cart["#{coupon[:item]}"][:clearance],
       count: coupon[:num]
     }
+    cart[]
  end
 p cart
 end
