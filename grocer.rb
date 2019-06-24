@@ -19,7 +19,7 @@ def apply_coupons(cart, coupons)
  coupon = coupons[0]
  result = "No Match!"
  if cart.has_key?(coupon[:item]) && coupon[:num] == cart[coupon[:item]][:count]
-  result = "Match!"
+  cart["#{coupon[:item]} W/COUPON"] = "#{cart[coupon[:item]]}"
  end
 p "#{result}"
 end
