@@ -16,11 +16,11 @@ result
 end
 
 def apply_coupons(cart, coupons)
-  if coupons[0] != " " && coupons[0] != false && coupons[0] != nil && coupons
+  if coupons[0] != " " && coupons[0] != false && coupons[0] != nil 
     coupon = coupons[0]
     item = coupon[:item] 
     with_coupon = "#{item} W/COUPON"
-  if cart.has_key?(coupon[:item]) && !cart.has_key?("#{with_coupon}")
+  if cart.has_key?(coupon[:item]) && !cart.has_key?("#{with_coupon}")  && coupon[:num] >= cart[item][:count]
     cart[with_coupon] = {
       price: coupon[:cost] / coupon[:num],
       clearance: cart["#{item}"][:clearance],
