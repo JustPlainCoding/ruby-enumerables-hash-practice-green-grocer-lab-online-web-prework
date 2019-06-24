@@ -16,7 +16,6 @@ result
 end
 
 def apply_coupons(cart, coupons)
-  p coupons
   if coupons[0] != " " && coupons[0] != false && coupons[0] != nil
     coupon = coupons[0]
     item = coupon[:item] 
